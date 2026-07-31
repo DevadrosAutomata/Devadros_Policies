@@ -6,97 +6,136 @@
     <title>Terms and Conditions - DA Navigator</title>
     <style>
         :root {
-            --primary-blue: #1a5f7a;
+            --primary-blue: #1a5f7a; /* The exact blue from your document */
             --text-grey: #333333;
+            --bg-color: #f4f7f6;
         }
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-grey);
-            background-color: #e0e0e0;
+            background-color: var(--bg-color);
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
         }
-        .document-page {
+
+        /* Container for the "Paper" document */
+        .document-container {
             background-color: white;
             width: 100%;
-            max-width: 850px;
+            max-width: 900px;
+            margin: 40px 20px;
             padding: 60px 80px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
             box-sizing: border-box;
+            border-radius: 4px;
         }
+
+        /* Responsive Header */
         .header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 20px;
+            border-bottom: 2px solid #eeeeee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
         }
+
         .title-section h1 {
-            font-size: 34px;
+            font-size: 32px;
             margin: 0;
-            color: black;
+            color: #000000;
+            text-transform: none;
         }
+
         .logo-section img {
-            height: 75px;
+            max-height: 80px;
+            width: auto;
         }
+
         .meta-data {
             font-weight: bold;
             font-size: 14px;
             margin-bottom: 40px;
             color: #000;
         }
+
+        /* Headings Styling */
         h2 {
             color: var(--primary-blue);
-            font-size: 20px;
-            margin-top: 35px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
+            font-size: 22px;
+            margin-top: 40px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 10px;
         }
-        h3 {
-            color: var(--primary-blue);
-            font-size: 18px;
-            margin-top: 20px;
-        }
+
         p, li {
-            font-size: 15px;
+            font-size: 16px;
             text-align: justify;
+            margin-bottom: 15px;
         }
+
         ul {
-            padding-left: 20px;
+            padding-left: 25px;
+            margin-bottom: 20px;
         }
+
         li {
-            margin-bottom: 8px;
+            list-style-type: disc;
+            margin-bottom: 10px;
         }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .document-container {
+                margin: 0;
+                padding: 30px 20px;
+                box-shadow: none;
+            }
+            .header {
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: center;
+            }
+            .logo-section {
+                margin-bottom: 20px;
+            }
+            .title-section h1 {
+                font-size: 26px;
+            }
+        }
+
         .footer {
             margin-top: 60px;
-            padding-top: 10px;
+            padding-top: 20px;
             border-top: 2px solid #333;
             display: flex;
             justify-content: space-between;
             font-weight: bold;
             font-size: 13px;
         }
-        @media (max-width: 600px) {
-            .document-page { padding: 30px; }
-            .header { flex-direction: column-reverse; }
+
+        a {
+            color: var(--primary-blue);
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
-<div class="document-page">
-    <!-- Header -->
-    <div class="header">
+<div class="document-container">
+    <!-- Header Section -->
+    <header class="header">
         <div class="title-section">
             <h1>Terms and Conditions</h1>
         </div>
         <div class="logo-section">
-            <img src="../logo.png" alt="DEVADROS">
+            <img src="../logo.png" alt="DEVADROS Logo">
         </div>
-    </div>
+    </header>
 
     <div class="meta-data">
         Version: 1.0.0<br>
@@ -112,7 +151,7 @@
     <p>By downloading, installing, accessing or using the Application, you acknowledge that you have read, understood and agreed to be legally bound by these Terms, our Privacy Policy, and any additional policies or notices published by Devadros from time to time.</p>
     <p>If you do not agree to these Terms, you must immediately discontinue the use of the Application.</p>
 
-    <!-- 2. Acceptance -->
+    <!-- 2. Acceptance of Terms -->
     <h2>2. Acceptance of Terms</h2>
     <p>By accessing or using the Application, you represent and warrant that:</p>
     <ul>
@@ -133,7 +172,7 @@
     </ul>
     <p>Devadros reserves the right to refuse, suspend or terminate access to the Application where it reasonably believes that a user does not satisfy the eligibility requirements or has provided false or misleading information.</p>
 
-    <!-- 4. User Account -->
+    <!-- 4. User Account and Authentication -->
     <h2>4. User Account and Authentication</h2>
     <p>Certain features of the Application may require user authentication through supported sign-in methods, including Google Sign-In or any other authentication mechanism introduced by Devadros from time to time.</p>
     <p>You are responsible for:</p>
@@ -156,7 +195,8 @@
         <li>Enable user authentication through supported sign-in methods.</li>
         <li>Provide additional features, improvements or integrations introduced by Devadros from time to time.</li>
     </ul>
-    <p>Devadros may modify, enhance, suspend or discontinue any feature of the Application at its sole discretion without prior notice where reasonably necessary for maintenance, legal compliance, security, operational requirements or product improvement. Nothing contained in these Terms shall be construed as a guarantee that any feature or functionality will remain continuously available or operate without interruption.</p>
+    <p>Devadros may modify, enhance, suspend or discontinue any feature of the Application at its sole discretion without prior notice where reasonably necessary for maintenance, legal compliance, security, operational requirements or product improvement.</p>
+    <p>Nothing contained in these Terms shall be construed as a guarantee that any feature or functionality will remain continuously available or operate without interruption.</p>
 
     <!-- 6. User Responsibilities -->
     <h2>6. User Responsibilities</h2>
@@ -169,85 +209,193 @@
         <li>Ensure that your device, internet connectivity and location services are appropriately configured for the intended functionality of the Application.</li>
         <li>Exercise independent judgment while relying upon any location-based information or route guidance provided through the Application.</li>
     </ul>
-    <p>You shall not: misuse, interfere with, disrupt or attempt to gain unauthorized access; introduce malware, viruses, or harmful technology; reverse engineer or decompile the Application; use automated tools or bots; use the App for fraudulent purposes; or impersonate another individual. Failure to comply may result in suspension or termination.</p>
+    <p>You shall not:</p>
+    <ul>
+        <li>Misuse, interfere with, disrupt or attempt to gain unauthorized access to the Application, its servers, networks or related systems.</li>
+        <li>Introduce malware, viruses, malicious code or any harmful technology into the Application.</li>
+        <li>Reverse engineer, decompile, modify, copy or create derivative works from the Application except where expressly permitted by applicable law.</li>
+        <li>Use automated tools, bots, scripts or other technologies to access the Application in an unauthorized manner.</li>
+        <li>Use the Application for any unlawful, fraudulent, harmful or abusive purpose.</li>
+        <li>Impersonate another individual or misrepresent your identity while using the Application.</li>
+    </ul>
+    <p>Failure to comply with these responsibilities may result in suspension or termination of access to the Application, in addition to any other remedies available under applicable law.</p>
 
     <!-- 7. Location-Based Services -->
     <h2>7. Location-Based Services</h2>
     <p>The Application provides certain features based on the user's current geographic location. These features are available only when the user voluntarily grants the necessary location permissions through their device settings.</p>
     <p>By enabling location services, you acknowledge and agree that the Application may access your device's current location solely for the purpose of providing location-based functionality, including identifying nearby hospitals and pharmacies and generating route guidance to selected destinations.</p>
-    <p>You may disable or withdraw location permissions at any time through your device settings. Devadros does not continuously monitor your location beyond what is necessary to provide requested services, and processing shall be governed by the Privacy Policy.</p>
+    <p>You may disable or withdraw location permissions at any time through your device settings. However, disabling such permissions may limit or prevent the proper functioning of certain features of the Application.</p>
+    <p>Devadros does not continuously monitor your location beyond what is necessary to provide the requested location-based services, and all processing of location information shall be governed by the Privacy Policy.</p>
 
-    <!-- 8. Routing Disclaimer -->
+    <!-- 8. Routing and Navigation Disclaimer -->
     <h2>8. Routing and Navigation Disclaimer</h2>
-    <p>The Application provides route guidance using third-party mapping data and open-source routing technologies. Route guidance is provided solely for informational and convenience purposes. The routes generated by the Application may not always reflect current road conditions, traffic congestion, road closures, construction activities, diversions, government restrictions, weather conditions, or other circumstances beyond the control of Devadros.</p>
-    <p>Users remain solely responsible for: exercising independent judgment while travelling; complying with all applicable traffic laws; and assessing whether a suggested route is appropriate and safe. Devadros does not warrant that any route is the shortest, fastest, or safest available.</p>
+    <p>The Application provides route guidance using third-party mapping data and open-source routing technologies to assist users in reaching selected destinations.</p>
+    <p>Route guidance is provided solely for informational and convenience purposes. The routes generated by the Application may not always reflect current road conditions, traffic congestion, road closures, construction activities, diversions, government restrictions, weather conditions, or other circumstances beyond the control of Devadros.</p>
+    <p>Users remain solely responsible for:</p>
+    <ul>
+        <li>Exercising independent judgment while travelling;</li>
+        <li>Complying with all applicable traffic laws, road signs and governmental directions;</li>
+        <li>Assessing whether a suggested route is appropriate and safe for their circumstances.</li>
+    </ul>
+    <p>Devadros does not warrant or guarantee that any route generated by the Application is the shortest, fastest, safest, uninterrupted or most suitable route available.</p>
+    <p>Users should discontinue reliance on route guidance whenever doing so is necessary to ensure their own safety or to comply with applicable law.</p>
 
-    <!-- 9. Hospital Disclaimer -->
+    <!-- 9. Hospital and Pharmacy Information Disclaimer -->
     <h2>9. Hospital and Pharmacy Information Disclaimer</h2>
-    <p>The Application is intended to assist users in locating hospitals and pharmacies based on available location information. Devadros does not own, operate, control, endorse, certify or recommend any healthcare institution displayed unless expressly stated otherwise. Inclusion does not constitute a guarantee of quality or suitability. Users are solely responsible for independently verifying availability, operating hours, and services offered before relying upon such information.</p>
+    <p>The Application is intended to assist users in locating hospitals and pharmacies based on available location information.</p>
+    <p>Devadros does not own, operate, control, endorse, certify or recommend any hospital, pharmacy, healthcare professional or healthcare institution displayed within the Application unless expressly stated otherwise.</p>
+    <p>The inclusion of any hospital or pharmacy within the Application shall not be construed as a recommendation, accreditation, certification, endorsement or guarantee of the quality, availability, suitability or standard of healthcare services provided by such entities.</p>
+    <p>Users are solely responsible for independently verifying the availability, operating hours, contact details, services offered and suitability of any hospital or pharmacy before relying upon such information.</p>
+    <p>Devadros shall not be responsible for any decisions made by users based upon the information displayed within the Application or for the acts, omissions, negligence or services of any third-party healthcare provider or pharmacy.</p>
 
-    <!-- 10. Emergency Services -->
+    <!-- 10. Emergency Services Disclaimer -->
     <h2>10. Emergency Services Disclaimer</h2>
-    <p><strong>DA Navigator is not an emergency response service and must not be relied upon as a substitute for emergency medical services, ambulance services, police assistance, fire services or other emergency response agencies.</strong></p>
-    <p>The Application does not provide medical advice or diagnosis. In the event of a medical emergency, users should immediately contact appropriate emergency services or proceed to the nearest available healthcare facility without relying solely upon the Application.</p>
+    <p>DA Navigator is not an emergency response service and must not be relied upon as a substitute for emergency medical services, ambulance services, police assistance, fire services or other emergency response agencies.</p>
+    <p>The Application does not provide medical advice, medical diagnosis, medical treatment or clinical recommendations.</p>
+    <p>In the event of a medical emergency or any situation involving an immediate threat to life, health or safety, users should immediately contact the appropriate emergency services or proceed to the nearest available healthcare facility without relying solely upon the Application.</p>
+    <p>Devadros does not guarantee the availability, accessibility, response time or operational status of any hospital, pharmacy or emergency service identified through the Application.</p>
 
-    <!-- 11. IP Rights -->
+    <!-- 11. Intellectual Property Rights -->
     <h2>11. Intellectual Property Rights</h2>
-    <p>Unless otherwise expressly stated, the Application, including its software, source code, object code, user interface, design, layout, graphics, logos, trademarks, and content are owned by or lawfully licensed to Devadros Automata Private Limited. Nothing contained in these Terms grants any ownership rights to users except the limited, revocable, non-exclusive and non-transferable right to use the Application in accordance with these Terms.</p>
-    <p>Users shall not: copy, modify or distribute the App; attempt to derive source code; remove copyright notices; or use the Application for commercial exploitation without authorization.</p>
+    <p>Unless otherwise expressly stated, the Application, including its software, source code, object code, user interface, design, layout, graphics, logos, trademarks, trade names, content, text, databases, documentation, compilations and all related intellectual property rights are owned by or lawfully licensed to Devadros Automata Private Limited and are protected under applicable intellectual property laws.</p>
+    <p>Nothing contained in these Terms grants any ownership rights or intellectual property rights to users except the limited, revocable, non-exclusive and non-transferable right to use the Application in accordance with these Terms.</p>
+    <p>Users shall not, without the prior written consent of Devadros:</p>
+    <ul>
+        <li>Copy, reproduce, modify or distribute any part of the Application;</li>
+        <li>Reverse engineer, decompile or attempt to derive the source code of the Application except where expressly permitted by applicable law;</li>
+        <li>Remove, alter or obscure any copyright, trademark or proprietary notices;</li>
+        <li>Create derivative works based upon the Application;</li>
+        <li>Use the Application or any part thereof for commercial exploitation without authorization.</li>
+    </ul>
+    <p>All rights not expressly granted under these Terms are reserved by Devadros.</p>
 
-    <!-- 12. Open-Source -->
+    <!-- 12. Open-Source Software and Third-Party Technologies -->
     <h2>12. Open-Source Software and Third-Party Technologies</h2>
-    <p>The Application incorporates certain third-party software and open-source components (including mapping technologies, routing engines, and libraries) licensed under their respective terms. Ownership remains vested in their respective owners. Nothing in these Terms transfers ownership rights beyond the rights granted under applicable licenses.</p>
+    <p>The Application incorporates certain third-party software, open-source software components and technology services that are licensed under their respective license terms.</p>
+    <p>Such components may include, without limitation, mapping technologies, routing engines, authentication services, software libraries, frameworks and other supporting technologies necessary for the operation of the Application.</p>
+    <p>The ownership and intellectual property rights in such third-party and open-source components remain vested in their respective owners and licensors.</p>
+    <p>Nothing contained in these Terms transfers any ownership rights in such third-party technologies to users or to Devadros beyond the rights granted under the applicable licenses.</p>
+    <p>Where required by applicable open-source licenses, appropriate acknowledgements, copyright notices and license information are made available within the Application.</p>
+    <p>Users agree to comply with any applicable third-party license restrictions where such restrictions are relevant to their use of the Application.</p>
 
-    <!-- 13. Privacy -->
+    <!-- 13. Privacy and Data Protection -->
     <h2>13. Privacy and Data Protection</h2>
-    <p>Devadros is committed to protecting the privacy and security of users' personal information. The collection and processing of information through the Application shall be governed by the Privacy Policy published by Devadros. By accessing or using the Application, you acknowledge that you have read and understood the Privacy Policy and consent to the collection and processing of your personal information in accordance with applicable laws.</p>
+    <p>Devadros is committed to protecting the privacy and security of users' personal information. The collection, use, storage, processing, disclosure and protection of personal information through the Application shall be governed by the Privacy Policy published by Devadros, as amended from time to time.</p>
+    <p>By accessing or using the Application, you acknowledge that you have read and understood the Privacy Policy and consent to the collection and processing of your personal information in accordance with the Privacy Policy and applicable laws.</p>
+    <p>Users are responsible for ensuring that the personal information provided by them is accurate, complete and up to date. Devadros shall not be responsible for any consequences arising from inaccurate or incomplete information provided by users.</p>
+    <p>Where applicable, users may exercise their rights regarding personal information in accordance with the Privacy Policy and applicable law.</p>
 
     <!-- 14. Prohibited Activities -->
     <h2>14. Prohibited Activities</h2>
-    <p>Users shall not directly or indirectly engage in any activity that may interfere with the operation, security, or lawful use of the Application. This includes circumventing authentication, uploading malicious software, using automated scripts without authorization, scraping data, or infringing on intellectual property and privacy rights.</p>
+    <p>Users shall not directly or indirectly engage in any activity that may interfere with the operation, security, integrity or lawful use of the Application.</p>
+    <p>Without limitation, users shall not:</p>
+    <ul>
+        <li>Use the Application for any unlawful, fraudulent or unauthorized purpose.</li>
+        <li>Attempt to gain unauthorized access to the Application, servers, databases, APIs, user accounts or related systems.</li>
+        <li>Circumvent or attempt to circumvent any authentication, security or access control mechanisms.</li>
+        <li>Upload, transmit or distribute viruses, malware, ransomware, spyware or any malicious software.</li>
+        <li>Use automated scripts, bots, crawlers or similar technologies to access or misuse the Application without prior written authorization.</li>
+        <li>Interfere with or disrupt the availability, performance or functionality of the Application.</li>
+        <li>Copy, reproduce, scrape, harvest or systematically extract data, content or information from the Application without authorization.</li>
+        <li>Use the Application in a manner that infringes the intellectual property, privacy or other legal rights of any person or entity.</li>
+        <li>Misrepresent identity, impersonate another individual or provide false or misleading information.</li>
+        <li>Engage in any activity that could damage the reputation, goodwill or legitimate business interests of Devadros.</li>
+    </ul>
+    <p>Devadros reserves the right to investigate suspected violations and take appropriate action, including suspension or termination of user access and reporting unlawful activities to competent authorities.</p>
 
-    <!-- 15. Suspension -->
+    <!-- 15. Suspension and Termination -->
     <h2>15. Suspension and Termination</h2>
-    <p>Devadros reserves the right, at its sole discretion, to suspend, restrict or terminate a user's access where: the user breaches these Terms; engages in fraudulent conduct; continued access poses a security risk; or the Application is discontinued. Termination shall not affect rights or obligations accrued prior to termination.</p>
+    <p>Devadros reserves the right, at its sole discretion and without prejudice to any other legal remedies available, to suspend, restrict or terminate a user's access to the Application where:</p>
+    <ul>
+        <li>The user breaches these Terms;</li>
+        <li>The user engages in unlawful, fraudulent or abusive conduct;</li>
+        <li>Continued access poses a security, operational or legal risk;</li>
+        <li>Suspension or termination is required to comply with applicable law, regulatory requirements or governmental directions; or</li>
+        <li>The Application or any part thereof is discontinued.</li>
+    </ul>
+    <p>Where reasonably practicable, Devadros may provide prior notice before suspension or termination. However, immediate action may be taken where necessary to protect the security, integrity or lawful operation of the Application.</p>
+    <p>Termination of access shall not affect any rights, obligations or liabilities that accrued prior to such termination.</p>
 
-    <!-- 16. Warranty -->
+    <!-- 16. Disclaimer of Warranties -->
     <h2>16. Disclaimer of Warranties</h2>
-    <p>The Application is provided on an "as is" and "as available" basis to the fullest extent permitted under applicable law. Devadros does not represent or warrant that: the Application will operate uninterrupted or error-free; it will always be secure; or that information displayed will always be complete or accurate. All express, implied and statutory warranties are hereby disclaimed.</p>
+    <p>The Application is provided on an "as is" and "as available" basis to the fullest extent permitted under applicable law.</p>
+    <p>While Devadros makes reasonable efforts to maintain the availability, functionality and accuracy of the Application, Devadros does not represent or warrant that:</p>
+    <ul>
+        <li>The Application will operate uninterrupted, error-free or without delays;</li>
+        <li>The Application will always be secure or free from vulnerabilities;</li>
+        <li>Information displayed through the Application will always be complete, current or accurate;</li>
+        <li>Any defects or errors will be corrected within a particular timeframe;</li>
+        <li>The Application will be compatible with every device, operating system or network environment.</li>
+    </ul>
+    <p>Except to the extent expressly required under applicable law, all express, implied and statutory warranties, including warranties of merchantability, fitness for a particular purpose and non-infringement, are hereby disclaimed.</p>
+    <p>Nothing contained in these Terms shall exclude or limit any rights that cannot lawfully be excluded under applicable law.</p>
 
-    <!-- 17. Liability -->
+    <!-- 17. Limitation of Liability -->
     <h2>17. Limitation of Liability</h2>
-    <p>To the fullest extent permitted under applicable law, Devadros Automata Private Limited and its officers shall not be liable for any direct, indirect, incidental, or consequential damages arising out of: access to or use of the App; inability to access the App; inaccuracies in displayed information; or cyber incidents beyond reasonable control.</p>
+    <p>To the fullest extent permitted under applicable law, Devadros Automata Private Limited, its directors, officers, employees, consultants, affiliates and service providers shall not be liable for any direct, indirect, incidental, consequential, special, exemplary or punitive damages arising out of or relating to:</p>
+    <ul>
+        <li>Access to or use of the Application;</li>
+        <li>Inability to access or use the Application;</li>
+        <li>Temporary or permanent interruption of services;</li>
+        <li>Inaccuracies, omissions or delays in information displayed through the Application;</li>
+        <li>Decisions made by users based upon information, routing or location-based services provided by the Application;</li>
+        <li>Actions, omissions or services of hospitals, pharmacies or other third-party service providers;</li>
+        <li>Unauthorized access, cyber incidents or events beyond the reasonable control of Devadros.</li>
+    </ul>
+    <p>Nothing contained in these Terms shall exclude or limit liability where such exclusion or limitation is prohibited by applicable law or arises from Devadros' fraud, wilful misconduct or any other liability that cannot legally be excluded.</p>
 
     <!-- 18. Indemnification -->
     <h2>18. Indemnification</h2>
-    <p>You agree to defend, indemnify and hold harmless Devadros and its affiliates from and against any claims, damages, costs and expenses (including legal fees) arising out of: your breach of these Terms; misuse of the Application; violation of any law; or any negligent or fraudulent act committed by you while using the Application.</p>
+    <p>You agree to defend, indemnify and hold harmless Devadros Automata Private Limited, its directors, officers, employees, affiliates, consultants, licensors and service providers from and against any claims, demands, actions, proceedings, liabilities, losses, damages, penalties, costs and expenses (including reasonable legal fees) arising out of or relating to:</p>
+    <ul>
+        <li>Your breach of these Terms;</li>
+        <li>Your misuse of the Application;</li>
+        <li>Your violation of any applicable law or regulation;</li>
+        <li>Your infringement of the rights of any third party;</li>
+        <li>Any false, misleading or inaccurate information provided by you; or</li>
+        <li>Any negligent, fraudulent or unlawful act or omission committed by you while using the Application.</li>
+    </ul>
+    <p>The obligations under this Clause shall survive the suspension, termination or discontinuation of your use of the Application to the extent permitted by applicable law.</p>
 
-    <!-- 19. Changes -->
+    <!-- 19. Changes to the Application and Terms -->
     <h2>19. Changes to the Application and Terms</h2>
-    <p>Devadros reserves the right to modify, update, suspend, or discontinue any feature at its sole discretion. We also reserve the right to amend or update these Terms to comply with laws, reflect business changes, or improve security. Material changes will be notified through appropriate channels. Continued use constitutes acceptance of revised Terms.</p>
+    <p>Devadros Automata Private Limited continually improves and enhances the Application to provide better functionality, security and user experience. Accordingly, Devadros reserves the right, at its sole discretion and without prior notice where reasonably necessary, to modify, update, suspend, discontinue or replace any feature, functionality, content or service offered through the Application.</p>
+    <p>Devadros also reserves the right to amend, revise or update these Terms from time to time in order to:</p>
+    <ul>
+        <li>Comply with applicable laws, regulations or governmental directions;</li>
+        <li>Reflect changes in business operations or technology;</li>
+        <li>Introduce new features or services;</li>
+        <li>Improve security or user experience; or</li>
+        <li>Address operational or legal requirements.</li>
+    </ul>
+    <p>Where material changes are made to these Terms, Devadros will make reasonable efforts to notify users through the Application, the Google Play Store listing, the official website or other appropriate communication channels.</p>
+    <p>The revised Terms shall become effective from the date specified in the updated version. Your continued use of the Application after such effective date shall constitute your acceptance of the revised Terms.</p>
+    <p>If you do not agree with the revised Terms, you must discontinue the use of the Application.</p>
 
-    <!-- 20. Governing Law -->
+    <!-- 20. Governing Law, Dispute Resolution and General Provisions -->
     <h2>20. Governing Law, Dispute Resolution and General Provisions</h2>
-    <p>These Terms shall be governed by and construed in accordance with the laws of India. Subject to applicable law, the courts having jurisdiction at <strong>Nagpur, Maharashtra, India</strong> shall have exclusive jurisdiction over any dispute arising out of or relating to these Terms or the use of the Application. Before initiating legal proceedings, users are encouraged to contact Devadros in good faith to seek amicable resolution.</p>
-    <p>If any provision is held to be invalid or unenforceable, such provision shall be deemed severable and the remaining provisions shall continue in full force and effect. These Terms, together with the Privacy Policy, constitute the entire agreement between the user and Devadros.</p>
+    <p>These Terms shall be governed by and construed in accordance with the laws of India.</p>
+    <p>Subject to applicable law, the courts having jurisdiction at <strong>Nagpur, Maharashtra, India</strong> shall have exclusive jurisdiction over any dispute, claim or proceeding arising out of or relating to these Terms or the use of the Application.</p>
+    <p>Before initiating any legal proceedings, users are encouraged to first contact Devadros in good faith to seek an amicable resolution of the dispute.</p>
+    <p>If any provision of these Terms is held to be invalid, illegal or unenforceable by a court or competent authority, such provision shall be deemed severable and the remaining provisions shall continue in full force and effect.</p>
+    <p>Failure by Devadros to enforce any provision of these Terms on any occasion shall not constitute a waiver of its right to enforce that or any other provision at any subsequent time.</p>
+    <p>These Terms, together with the Privacy Policy and any other policies or legal notices expressly incorporated by reference, constitute the entire agreement between the user and Devadros with respect to the use of the Application and supersede all prior understandings, communications or agreements relating to the same subject matter.</p>
+    <p>Any provisions of these Terms which by their nature are intended to survive termination, including but not limited to provisions relating to intellectual property, limitation of liability, indemnification, dispute resolution and applicable law, shall survive the suspension, termination or discontinuation of the Application or the user's access thereto.</p>
 
-    <!-- Contact -->
+    <!-- Contact Information -->
     <h2>Contact Information</h2>
     <p>If you have any questions, concerns or grievances regarding these Terms or the Application, you may contact:</p>
     <p>
         <strong>Devadros Automata Private Limited</strong><br>
         Email: <a href="mailto:contact@devadros.com">contact@devadros.com</a><br>
-        Website: <a href="https://www.devadros.com">www.devadros.com</a>
+        Website: <a href="https://www.devadros.com" target="_blank">www.devadros.com</a>
     </p>
     <p>The Company will make reasonable efforts to respond to legitimate queries within a reasonable timeframe in accordance with applicable law.</p>
 
-    <!-- Footer -->
-    <div class="footer">
+    <footer class="footer">
         <div>© 2025-26 Devadros Automata Private Limited</div>
         <div>All Rights Reserved.</div>
-    </div>
+    </footer>
 </div>
 
 </body>
